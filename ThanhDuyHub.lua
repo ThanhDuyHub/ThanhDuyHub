@@ -1,3 +1,4 @@
+--// This code was open-sourced by ThanhDuyHub
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 local UserInputService = game:GetService("UserInputService")
