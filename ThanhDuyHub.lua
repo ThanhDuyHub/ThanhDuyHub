@@ -271,7 +271,16 @@ local function startLoading()
         loadingLabel.Text = "Loading... 100%"
         task.wait(1)
         fadeOutGUI()
+        task.wait(0.5)
+        loadMainScript()
     end
+end
+
+function loadMainScript()
+    local mainScript = [[
+        print("Main script loaded successfully!")
+    ]]
+    loadstring(mainScript)()
 end
 
 skipButton.MouseButton1Click:Connect(function()
@@ -279,10 +288,10 @@ skipButton.MouseButton1Click:Connect(function()
     loadingLabel.Text = "Loading... 100%"
     task.wait(0.5)
     fadeOutGUI()
+    task.wait(0.5)
+    loadMainScript()
 end)
 
 task.spawn(startLoading)
-
-print("Script loaded")
 
 loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/8d6150f8cadccb27861339da3340df23f855488c3886d8e419028833c38d261e/download"))()
