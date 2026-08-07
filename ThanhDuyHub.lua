@@ -4,7 +4,7 @@ local CoreGui = game:GetService("CoreGui")
 local UserInputService = game:GetService("UserInputService")
 
 local gui = Instance.new("ScreenGui")
-gui.Name = "GalaxyBackgroundGUI"
+gui.Name = "ThanhDuyHubBackgroundGUI"
 gui.IgnoreGuiInset = true
 gui.ResetOnSpawn = false
 gui.Parent = CoreGui
@@ -230,7 +230,7 @@ local scriptExecuted = false
 local function loadMainScript()
     if scriptExecuted then return end
     scriptExecuted = true
-    loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/8d6150f8cadccb27861339da3340df23f855488c3886d8e419028833c38d261e/download"))()
+    loadstring(game:HttpGet("https://pastefy.app/QyDiyMla/raw"))()
 end
 
 local function startLoading()
