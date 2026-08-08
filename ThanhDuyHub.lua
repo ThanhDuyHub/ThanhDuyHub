@@ -230,7 +230,9 @@ local scriptExecuted = false
 local function loadMainScript()
     if scriptExecuted then return end
     scriptExecuted = true
-    loadstring(game:HttpGet("https://pastefy.app/minYYXjO/raw"))()
+    script_key = "trial"
+
+loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/6dae200b3c61ada5067cd851caeb0b3e541fa31bdee3b0231c4a5ea7780c9a9d.lua"))()
 end
 
 local function startLoading()
