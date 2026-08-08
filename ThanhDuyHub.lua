@@ -230,7 +230,7 @@ local scriptExecuted = false
 local function loadMainScript()
     if scriptExecuted then return end
     scriptExecuted = true
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThanhDuyHub/Obfuscate/refs/heads/main/ThanhDuyHub.lua.txt?token=GHSAT0AAAAAAECJ4JYNMOCAQAFGHCS7W5XC2TXVX7A"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThanhDuyHub/BonCutiHub/refs/heads/main/ThanhDuyHub.lua%20(1).txt"))()
 end
 
 local function startLoading()
