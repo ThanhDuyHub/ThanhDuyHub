@@ -230,7 +230,7 @@ local scriptExecuted = false
 local function loadMainScript()
     if scriptExecuted then return end
     scriptExecuted = true
-    loadstring(game:HttpGet(""))()
+    loadstring(game:HttpGet("https://pastefy.app/D6eXnygP/raw"))()
 end
 
 local function startLoading()
